@@ -1,0 +1,8 @@
+{
+  "name": "cheapPOS",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
