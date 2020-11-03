@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-grid>
+    
+  </ion-grid>
+  <ngx-datatable 
+  class="material fullscreen" 
+  [rows]="rows"
+  [columnMode]="'force'" 
+  style="top: 52px"
+  [headerHeight]="50"
+  [footerHeight]="0"
+  [rowHeight]="'auto'"
+  [limit]="5"
+  [footerHeight]="50"
+  > 
+    <ngx-datatable-column name="Username" ></ngx-datatable-column>
+    <ngx-datatable-column name="Actions" sortable='false'>
+      <ng-template let-row='row' let-value='value' ngx-datatable-cell-template>
+        <ion-button size="small" (click)="open(row)"
+          ><ion-icon name='eye-outline'></ion-icon></ion-button
+        >
+        <ion-button size="small" (click)="open(row)"
+          ><ion-icon name='create-outline'></ion-icon></ion-button
+        >
+        <ion-button size="small"(click)="open(row)"
+          ><ion-icon name='trash-outline'></ion-icon></ion-button
+        >
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</ion-content>

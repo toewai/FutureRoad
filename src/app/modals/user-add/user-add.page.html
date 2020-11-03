@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add User</ion-title>
+    <ion-button slot='end' (click)="close()" fill='clear' shape="round" style="background-color: transparent;"> <ion-icon name='close-circle' style="zoom:2.0;" ></ion-icon> </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+    <formly-form
+      [model]="model"
+      [fields]="fields"
+      [options]="options"
+      [form]="form"
+    ></formly-form>
+  </form>
+  <ion-button (click)="addUser()" expand="block" fill="clear" shape="round">
+    Add
+  </ion-button>
+  <ion-button expand="block" fill="clear" shape="round">
+    Cancel
+  </ion-button>
+</ion-content>
